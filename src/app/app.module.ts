@@ -12,8 +12,9 @@ import { CurrentTrainingComponent } from './training/current-training/current-tr
 import { NewTrainingComponent } from './training/new-training/new-training.component';
 import { PastTrainingComponent } from './training/past-training/past-training.component';
 import { WelcomeComponent } from './welcome/welcome.component';
-//form
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; //form
+import { HeaderComponent } from './navigation/header/header.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,8 @@ import { FormsModule } from '@angular/forms';
     NewTrainingComponent,
     PastTrainingComponent,
     WelcomeComponent,
+    HeaderComponent,
+    SidenavListComponent,
   ],
   imports: [
     BrowserModule,
