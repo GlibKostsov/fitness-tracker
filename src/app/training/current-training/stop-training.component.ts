@@ -7,8 +7,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
       <p>You already got {{ passedData.progress }}%</p>
     </mat-dialog-content>
     <div mat-dialog-actions>
-      <button mat-button mat-dialog-close="true">Yes</button>
-      <button mat-button mat-dialog-close="false">No</button>
+      <button mat-button [mat-dialog-close]="true">Yes</button>
+      <button mat-button [mat-dialog-close]="false">'No</button>
     </div>`,
 })
 export class StopTrainingComponent {
