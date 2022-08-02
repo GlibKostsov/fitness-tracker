@@ -25,4 +25,8 @@ export class TrainingService {
     this.runningExercise = foundExercise;
     this.selectedExercise.next(<Exercise>{ ...foundExercise });
   }
+
+  getRunningExercise() {
+    return { ...this.runningExercise };
+  }
 }
