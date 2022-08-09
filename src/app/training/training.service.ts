@@ -10,7 +10,9 @@ export class TrainingService {
   private runningExercise: Exercise | undefined;
   selectedExercise = new Subject<Exercise | undefined>();
   exercisesChanged = new Subject<Exercise[]>();
-  private exercises: Exercise[] = [];
+  finishedExercisesChanged = new Subject<Exercise>();
+
+  private finishedExercises: Exercise[] = [];
 
   constructor(private firestore: AngularFirestore) {}
 
@@ -71,8 +73,14 @@ export class TrainingService {
   getRunningExercise() {
     return { ...this.runningExercise };
   }
-  getCompletedOrCancelledExercises() {
-    return this.exercises.slice();
+
+  fetchCompletedOrCancelledExercises() {
+    this.firestore
+      .collection('finishedExercises')
+      .valueChanges()
+      .subscribe((exercises: any) => {
+        this.finishedExercisesChanged.next(exercises);
+      });
   }
 
   private addDataToDatabase(exercise: Exercise) {
