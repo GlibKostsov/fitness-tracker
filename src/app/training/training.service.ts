@@ -6,8 +6,8 @@ import { ExternalReference } from '@angular/compiler';
 @Injectable()
 export class TrainingService {
   private availableExercises!: Exercise[];
-
   private runningExercise: Exercise | undefined;
+
   selectedExercise = new Subject<Exercise | undefined>();
   exercisesChanged = new Subject<Exercise[]>();
   finishedExercisesChanged = new Subject<Exercise>();
